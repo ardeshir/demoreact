@@ -20436,8 +20436,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var HelloWorld = _react2.default.createClass({
 	displayName: 'HelloWorld',
 
+	propType: {
+		name: _react2.default.PropTypes.string.isRequired
+	},
+
+	getDefaultProps: function getDefaultProps() {
+		return {
+			name: 'Ardeshir'
+		};
+	},
+
 	render: function render() {
-		return _react2.default.createElement('h1', null, 'hello world');
+		return _react2.default.createElement('h1', null, 'What up ', this.props.name);
 	}
 });
 
