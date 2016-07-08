@@ -20433,6 +20433,14 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement('h1', null, 'HELLO WORLD'), document.getElementById('app'));
+var HelloWorld = _react2.default.createClass({
+	displayName: 'HelloWorld',
+
+	render: function render() {
+		return _react2.default.createElement('h1', null, 'hello world');
+	}
+});
+
+_reactDom2.default.render(_react2.default.createElement(HelloWorld, null), document.getElementById('app'));
 
 },{"react":171,"react-dom":29}]},{},[172]);
