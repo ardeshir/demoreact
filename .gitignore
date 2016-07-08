@@ -1,0 +1,10 @@
+node_modules
+*~
+
+static
+.grunt
+build/
+coverage
+docs/*
+test/*
+*.log*
