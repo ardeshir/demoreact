@@ -11,6 +11,14 @@ var HelloWorld = React.createClass({
 		isPerson: React.PropTypes.bool
 	},
 
+	getInitialState: function() {
+		return { value : 1  }
+	},
+
+	componentDidMount: function() {
+		this.setState( { value: this.state.value + 19 } )
+	},
+
 	 getDefaultProps: function() {
 		return {
 			name: 'Ardeshir'
@@ -18,14 +26,15 @@ var HelloWorld = React.createClass({
 	}, 
 
 	render: function() {
-		var greeting = "world";
+		var greeting = "World";
 
 		if(this.props.isPerson) {
 			greeting = (<Person name={this.props.name} />)
 		}
 
-		return ( 
-			<h1>Watup { greeting }</h1> 
+		return (<div> 
+			<h1>Watup { greeting }</h1> {this.state.value}
+			</div>
 			)
 	}
 });
@@ -53,3 +62,7 @@ var Person = React.createClass({
         <HelloWorld name="Ardeshir" isPerson={true}/>,
         	document.getElementById('app')
  );
+
+
+
+

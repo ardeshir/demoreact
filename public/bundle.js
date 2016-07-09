@@ -20441,6 +20441,14 @@ var HelloWorld = _react2.default.createClass({
 		isPerson: _react2.default.PropTypes.bool
 	},
 
+	getInitialState: function getInitialState() {
+		return { value: 1 };
+	},
+
+	componentDidMount: function componentDidMount() {
+		this.setState({ value: this.state.value + 19 });
+	},
+
 	getDefaultProps: function getDefaultProps() {
 		return {
 			name: 'Ardeshir'
@@ -20448,13 +20456,13 @@ var HelloWorld = _react2.default.createClass({
 	},
 
 	render: function render() {
-		var greeting = "world";
+		var greeting = "World";
 
 		if (this.props.isPerson) {
 			greeting = _react2.default.createElement(Person, { name: this.props.name });
 		}
 
-		return _react2.default.createElement('h1', null, 'Watup ', greeting);
+		return _react2.default.createElement('div', null, _react2.default.createElement('h1', null, 'Watup ', greeting), ' ', this.state.value);
 	}
 });
 
