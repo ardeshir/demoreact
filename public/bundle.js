@@ -20437,6 +20437,31 @@ var HelloWorld = _react2.default.createClass({
 	displayName: 'HelloWorld',
 
 	propType: {
+		name: _react2.default.PropTypes.string,
+		isPerson: _react2.default.PropTypes.bool
+	},
+
+	getDefaultProps: function getDefaultProps() {
+		return {
+			name: 'Ardeshir'
+		};
+	},
+
+	render: function render() {
+		var greeting = "world";
+
+		if (this.props.isPerson) {
+			greeting = _react2.default.createElement(Person, { name: this.props.name });
+		}
+
+		return _react2.default.createElement('h1', null, 'Watup ', greeting);
+	}
+});
+
+var Person = _react2.default.createClass({
+	displayName: 'Person',
+
+	propType: {
 		name: _react2.default.PropTypes.string.isRequired
 	},
 
@@ -20447,10 +20472,10 @@ var HelloWorld = _react2.default.createClass({
 	},
 
 	render: function render() {
-		return _react2.default.createElement('h1', null, 'What up ', this.props.name);
+		return _react2.default.createElement('span', null, this.props.name);
 	}
 });
 
-_reactDom2.default.render(_react2.default.createElement(HelloWorld, null), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(HelloWorld, { name: 'Ardeshir', isPerson: true }), document.getElementById('app'));
 
 },{"react":171,"react-dom":29}]},{},[172]);
